@@ -2,7 +2,7 @@ Httpc
 ======
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/valord577/httpc?t=0)](https://goreportcard.com/report/github.com/valord577/httpc)
-[![Release](https://img.shields.io/github/v/release/valord577/httpc.svg)](https://github.com/valord577/httpc/releases)
+[![Release](https://img.shields.io/github/v/release/valord577/httpc.svg?t=1)](https://github.com/valord577/httpc/releases)
 ![GitHub](https://img.shields.io/github/license/valord577/httpc?t=0)
 
 A customizable and simple HTTP client library. Only depend on the stdlib HTTP client.
