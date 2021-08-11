@@ -10,10 +10,10 @@ import (
 
 func TestHttpc(t *testing.T) {
 	c := PackedReq{
-		URL:    "https://www.google.com",
-		Method: http.MethodGet,
+		URL:              "https://www.google.com",
+		Method:           http.MethodGet,
 		ReqBodyPublisher: PublisherNoBody{},
-		RespBodyHandler: RespBodyAsByteArray{},
+		RespBodyHandler:  RespBodyAsByteArray{},
 	}
 
 	bs, err := c.Send()

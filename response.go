@@ -4,13 +4,16 @@ import "io"
 
 // @author valor.
 
+// RespBodyHandler processing response body
 type RespBodyHandler interface {
 	Apply(body io.ReadCloser) (interface{}, error)
 }
 
 // ------ no handle ------
 
-type RespBodyNoHandle struct {}
+// RespBodyNoHandle is the implement of RespBodyHandler
+//   -> No read body
+type RespBodyNoHandle struct{}
 
 func (r RespBodyNoHandle) Apply(_ io.ReadCloser) (interface{}, error) {
 	return nil, nil
@@ -18,7 +21,9 @@ func (r RespBodyNoHandle) Apply(_ io.ReadCloser) (interface{}, error) {
 
 // ------ read body as bytes ------
 
-type RespBodyAsByteArray struct {}
+// RespBodyAsByteArray is the implement of RespBodyHandler
+//   -> Read body as byte array
+type RespBodyAsByteArray struct{}
 
 func (r RespBodyAsByteArray) Apply(body io.ReadCloser) (interface{}, error) {
 	bs, err := io.ReadAll(body)
@@ -27,4 +32,3 @@ func (r RespBodyAsByteArray) Apply(body io.ReadCloser) (interface{}, error) {
 	}
 	return bs, nil
 }
-

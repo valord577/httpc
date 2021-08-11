@@ -7,6 +7,7 @@ import (
 
 // @author valor.
 
+// ReqBody need by stdlib HTTP client
 type ReqBody struct {
 
 	// Request body
@@ -19,6 +20,7 @@ type ReqBody struct {
 	Type string
 }
 
+// ReqBodyPublisher processing request body
 type ReqBodyPublisher interface {
 	Subscribe() ReqBody
 }
@@ -33,6 +35,7 @@ func (e PublisherNoBody) Subscribe() ReqBody {
 
 // ------ raw body ------
 
+// RawType HTTP content-type enum
 type RawType int
 
 const (
@@ -44,6 +47,7 @@ const (
 	RawTypeUrlEncodedForm
 )
 
+// RawTypesMap HTTP content-type map
 var RawTypesMap = map[RawType]string{
 	RawTypeText: "text/plain; charset=utf-8",
 	RawTypeHtml: "text/html; charset=utf-8",

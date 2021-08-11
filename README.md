@@ -1,6 +1,8 @@
 Httpc
 ======
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/valord577/httpc)](https://goreportcard.com/report/github.com/valord577/httpc)
+
 A customizable and simple HTTP client library. Only depend on the stdlib HTTP client.
 
 Features

@@ -71,7 +71,7 @@ func (r PackedReq) Send() (interface{}, error) {
 	}
 
 	// set user agent
-	req.Header.Set("User-Agent", "httpc v" + version + " @github.com:valord577")
+	req.Header.Set("User-Agent", "httpc v"+version+" @github.com:valord577")
 
 	// set header
 	if len(r.Header) > 0 {
