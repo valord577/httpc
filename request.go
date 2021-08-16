@@ -42,11 +42,16 @@ func (e PublisherNoBody) Subscribe() ReqBody {
 type RawType int
 
 const (
+	// RawTypeText "text/plain; charset=utf-8"
 	RawTypeText RawType = iota
+	// RawTypeHtml "text/html; charset=utf-8"
 	RawTypeHtml
+	// RawTypeJson "application/json; charset=utf-8"
 	RawTypeJson
+	// RawTypeXml "application/xml; charset=utf-8"
 	RawTypeXml
 
+	// RawTypeUrlEncodedForm "application/x-www-form-urlencoded; charset=utf-8"
 	RawTypeUrlEncodedForm
 )
 
