@@ -9,6 +9,7 @@ import (
 
 // @author valor.
 
+// PackedReq is a struct used to define the HTTP request
 type PackedReq struct {
 
 	// if nil, use global.defaultHttpClient
@@ -38,6 +39,7 @@ func (r PackedReq) getBlankHttpRequest() (req *http.Request, err error) {
 	return
 }
 
+// Send the HTTP request
 func (r PackedReq) Send() (interface{}, error) {
 	req, err := r.getBlankHttpRequest()
 	if err != nil {

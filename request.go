@@ -27,8 +27,11 @@ type ReqBodyPublisher interface {
 
 // ------ empty body ------
 
+// PublisherNoBody is the implement of ReqBodyPublisher
+//   -> No request body
 type PublisherNoBody struct{}
 
+// Subscribe the empty request body
 func (e PublisherNoBody) Subscribe() ReqBody {
 	return ReqBody{}
 }
@@ -57,11 +60,14 @@ var RawTypesMap = map[RawType]string{
 	RawTypeUrlEncodedForm: "application/x-www-form-urlencoded; charset=utf-8",
 }
 
+// PublisherRawBytesBody is the implement of ReqBodyPublisher
+//   -> Byte array request body
 type PublisherRawBytesBody struct {
 	Body []byte
 	Type RawType
 }
 
+// Subscribe the byte array request body
 func (raw PublisherRawBytesBody) Subscribe() ReqBody {
 
 	length := len(raw.Body)
@@ -77,11 +83,14 @@ func (raw PublisherRawBytesBody) Subscribe() ReqBody {
 	}
 }
 
+// PublisherRawStringBody is the implement of ReqBodyPublisher
+//   -> String request body
 type PublisherRawStringBody struct {
 	Body string
 	Type RawType
 }
 
+// Subscribe the string request body
 func (raw PublisherRawStringBody) Subscribe() ReqBody {
 
 	length := len(raw.Body)

@@ -6,6 +6,8 @@ import "net/http"
 
 var defaultHttpClient = http.DefaultClient
 
+// SetGlobalHttpClient
+//   set default http client
 func SetGlobalHttpClient(client *http.Client) {
 	defaultHttpClient = client
 }
