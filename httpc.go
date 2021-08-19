@@ -3,6 +3,7 @@ package httpc
 import (
 	"context"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -64,7 +65,7 @@ func (r PackedReq) Send() (interface{}, error) {
 	if body.Content != nil {
 		rc, ok := body.Content.(io.ReadCloser)
 		if !ok {
-			rc = io.NopCloser(body.Content)
+			rc = ioutil.NopCloser(body.Content)
 		}
 		req.Body = rc
 

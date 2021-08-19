@@ -1,6 +1,9 @@
 package httpc
 
-import "io"
+import (
+	"io"
+	"io/ioutil"
+)
 
 // @author valor.
 
@@ -29,7 +32,7 @@ type RespBodyAsByteArray struct{}
 
 // Apply the handle
 func (r RespBodyAsByteArray) Apply(body io.ReadCloser) (interface{}, error) {
-	bs, err := io.ReadAll(body)
+	bs, err := ioutil.ReadAll(body)
 	if err != nil {
 		return nil, err
 	}

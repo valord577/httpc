@@ -10,7 +10,7 @@ import (
 
 func TestHttpc000(t *testing.T) {
 	c := PackedReq{
-		URL:              "https://www.google.com",
+		URL:              "https://www.163.com",
 		Method:           http.MethodGet,
 		ReqBodyPublisher: PublisherNoBody{},
 		RespBodyHandler:  RespBodyAsByteArray{},
@@ -25,7 +25,7 @@ func TestHttpc000(t *testing.T) {
 
 func TestHttpc001(t *testing.T) {
 	c := PackedReq{
-		URL:    "https://www.google.com",
+		URL:    "https://www.163.com",
 		Method: http.MethodPost,
 		ReqBodyPublisher: PublisherRawBytesBody{
 			Body: nil,
@@ -43,7 +43,7 @@ func TestHttpc001(t *testing.T) {
 
 func TestHttpc002(t *testing.T) {
 	c := PackedReq{
-		URL:    "https://www.google.com",
+		URL:    "https://www.163.com",
 		Method: http.MethodPost,
 		ReqBodyPublisher: PublisherRawStringBody{
 			Body: "",
